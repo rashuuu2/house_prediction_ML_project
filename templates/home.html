@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictaHouse - Home Price Prediction</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light gray background */
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="http://127.0.0.1:5000/home" class="text-2xl font-bold text-blue-600">
+                Predicta<span class="text-gray-700">House</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="http://127.0.0.1:5000/home" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="http://127.0.0.1:5000/prediction" class="text-gray-600 hover:text-blue-600 transition">Predict</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </div>
+            <a href="http://127.0.0.1:5000/prediction" class="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 cta-button">
+                Get Started
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="http://127.0.0.1:5000/home" class="block py-2 text-gray-600 hover:text-blue-600">Home</a>
+            <a href="http://127.0.0.1:5000/prediction" class="block py-2 text-gray-600 hover:text-blue-600">Predict</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">About Us</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Contact</a>
+            <a href="http://127.0.0.1:5000/prediction" class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 cta-button">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Find the True Value of Your Future Home</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Using cutting-edge AI, we provide accurate, data-driven price predictions to empower your real estate decisions.</p>
+                <a href="http://127.0.0.1:5000/prediction" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 cta-button">
+                    Start Predicting Now
+                </a>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Simple Steps to a Smart Decision</h2>
+                    <p class="text-gray-600 mt-2">Our process is designed for clarity and ease of use.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-100 text-blue-600 rounded-full p-6 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">1. Enter Property Details</h3>
+                        <p class="text-gray-600">Provide key information about the property, such as location, size, number of bedrooms, and amenities.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-100 text-blue-600 rounded-full p-6 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 14h.01M12 11h.01M12 17h.01M15 17h.01M15 11h.01M12 7h.01M15 7h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">2. AI-Powered Analysis</h3>
+                        <p class="text-gray-600">Our algorithm processes your input against millions of data points, including market trends and historical sales.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-100 text-blue-600 rounded-full p-6 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">3. Get Your Prediction</h3>
+                        <p class="text-gray-600">Receive an estimated market value instantly, along with insights to help you understand the price.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Why Choose PredictaHouse?</h2>
+                    <p class="text-gray-600 mt-2">We offer more than just a number.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">High Accuracy</h3>
+                        <p class="text-gray-600">Our model is constantly updated with the latest market data to ensure the highest possible accuracy for your predictions.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">Market Trends Analysis</h3>
+                        <p class="text-gray-600">Understand the 'why' behind the price with charts on local market performance and future forecasts.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">Neighborhood Insights</h3>
+                        <p class="text-gray-600">Get valuable information about the neighborhood, including school ratings, crime rates, and local amenities.</p>
+                    </div>
+                     <!-- Feature 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">Save & Compare</h3>
+                        <p class="text-gray-600">Save your predictions and compare different properties side-by-side to find the best deal for you.</p>
+                    </div>
+                     <!-- Feature 5 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">Free to Use</h3>
+                        <p class="text-gray-600">Our core prediction service is completely free, giving everyone access to powerful real estate insights.</p>
+                    </div>
+                     <!-- Feature 6 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-3">Developer API</h3>
+                        <p class="text-gray-600">Integrate our prediction engine into your own application with our simple and robust API.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-blue-600 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Make an Informed Move?</h2>
+                <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Don't guess what your dream home is worth. Get a data-backed valuation in seconds and negotiate with confidence.</p>
+                <a href="http://127.0.0.1:5000/prediction" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 cta-button">
+                    Predict a Price
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">PredictaHouse</h3>
+                    <p class="text-gray-400">Empowering buyers, sellers, and agents with transparent and accurate real estate data.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="http://127.0.0.1:5000/home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="http://127.0.0.1:5000/prediction" class="text-gray-400 hover:text-white">Predict</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.74.85-2.7 1.03A4.48 4.48 0 0016.1 4c-2.38 0-4.3 1.92-4.3 4.3 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.76 2.81 1.91 3.58-.7-.02-1.36-.21-1.94-.53v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.3 4.3 0 004 2.98 8.62 8.62 0 01-5.33 1.84c-.35 0-.69-.02-1.03-.06A12.34 12.34 0 008.29 20c7.55 0 11.68-6.25 11.68-11.68l-.01-.53c.8-.58 1.49-1.3 2.04-2.13z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rashi-singh-233310332/" class="text-gray-400 hover:text-white">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.17 14.42h-2.4v-4.88c0-1.28-.47-2.15-1.6-2.15-.88 0-1.34.6-1.56 1.18-.08.21-.1.5-.1.79v4.96H7.11s.03-6.78 0-7.49h2.4v1.02c.32-.5 1.08-.98 2.17-.98 1.58 0 2.79 1.04 2.79 3.27v4.18zM5.9 7.9c-.9 0-1.63-.72-1.63-1.61S5 4.68 5.9 4.68s1.63.72 1.63 1.61-.73 1.61-1.63 1.61zm1.2 9.52H4.7V8.92h2.4v8.5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                &copy; 2025 PredictaHouse. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
